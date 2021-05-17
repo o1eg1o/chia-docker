@@ -2,10 +2,8 @@ cd /chia-blockchain
 
 . ./activate
 
-if [[-z ${master_certificates} ]]; then
-  echo "New certificates are created."
-  chia init
-else
+chia init
+if [[ ${master_certificates} != "null" ]]; then
   echo "Certificates signed by master certifacete are created."
   chia init -c ${master_certificates}
 fi
