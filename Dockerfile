@@ -2,13 +2,17 @@ FROM ubuntu:latest
 
 EXPOSE 8555
 EXPOSE 8444
+EXPOSE 8445
+EXPOSE 8446
+EXPOSE 8447
+EXPOSE 8448
 
-ENV keys="generate"
-ENV harvester="false"
+ENV keys="/.chia/config/mnemonic_file1.txt"
+ENV harvester="true"
 ENV farmer="false"
 ENV plots_dir="/plots"
-ENV farmer_address="null"
-ENV farmer_port="null"
+ENV farmer_address="192.168.2.2"
+ENV farmer_port="8448"
 ENV testnet="false"
 ENV full_node_port="null"
 ARG BRANCH
