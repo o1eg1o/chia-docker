@@ -2,7 +2,13 @@ cd /chia-blockchain
 
 . ./activate
 
-chia init
+if [[-z ${master_certificates} ]]; then
+  echo "New certificates are created."
+  chia init
+else
+  echo "Certificates signed by master certifacete are created."
+  chia init -c ${master_certificates}
+fi
 
 if [[ ${keys} == "generate" ]]; then
   echo "to use your own keys pass them as a text file -v /path/to/keyfile:/path/in/container and -e keys=\"/path/in/container\""
