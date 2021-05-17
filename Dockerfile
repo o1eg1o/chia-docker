@@ -8,6 +8,7 @@ EXPOSE 8447
 EXPOSE 8448
 
 ENV keys="/.chia/config/mnemonic_file1.txt"
+ENV master_certificates="/.chia/tmp-ca/"
 ENV harvester="true"
 ENV farmer="false"
 ENV plots_dir="/plots"
